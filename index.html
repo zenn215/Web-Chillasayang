@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Chilla 💖 | My Heart's Message</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            animation: float 6s ease-in infinite;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .message {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: linear-gradient(to right, #f8f6ff, #fef2ff);
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .message:hover {
+            transform: translateY(-5px);
+        }
+        
+        .message h3 {
+            color: #ff6b6b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .message h3 i {
+            margin-right: 10px;
+        }
+        
+        .message p {
+            line-height: 1.6;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        .photos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        
+        .photo-frame {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #ff6b6b;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+            position: relative;
+            background: #ffd6d6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ff6b6b;
+            font-size: 2rem;
+            animation: pulse 2s infinite;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            color: white;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        
+        .footer p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .floating-heart {
+            position: absolute;
+            font-size: 24px;
+            color: rgba(255, 107, 107, 0.7);
+            animation: float 8s ease-in infinite;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .message p {
+                font-size: 1rem;
+            }
+            
+            .photo-frame {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="floatingHearts"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="hearts" id="hearts"></div>
+            <h1>Untuk Chilla 💖</h1>
+            <p>Dari seseorang yang selalu memikirkan kamu</p>
+        </div>
+        
+        <div class="content">
+            <div class="message">
+                <h3><i class="fas fa-heart"></i> Haloo Cillaa!</h3>
+                <p>Aku cuma mau bilang, semenjak kamu hadir di hidup aku, semuanya jadi lebih berwarna. Kayaknya, aku nemu missing piece yang selama ini aku cari.</p>
+            </div>
+            
+            <div class="message">
+                <h3><i class="fas fa-heart"></i> Kamu itu...</h3>
+                <p>Kamu itu kayak WiFi di ruangan yang sinyalnya jelek - bikin aku auto connect dan pengen selalu deket. Setiap hari aku kepikiran kamu, dari bangun tidur sampe mau tidur lagi.</p>
+            </div>
+            
+            <div class="message">
+                <h3><i class="fas fa-heart"></i> Aku mau jujur...</h3>
+                <p>Aku ngerasa paling beruntung bisa kenal kamu. Setiap chat dari kamu, bahkan cuma sticker doang, bikin hari aku langsung cerah. Gak ada yang bisa ngalihin perhatian aku dari kamu.</p>
+            </div>
+            
+            <div class="photos">
+                <div class="photo-frame">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="photo-frame">
+                    <i class="fas fa-kiss-wink-heart"></i>
+                </div>
+                <div class="photo-frame">
+                    <i class="fas fa-smile"></i>
+                </div>
+            </div>
+            
+            <div class="message">
+                <h3><i class="fas fa-heart"></i> Intinya...</h3>
+                <p>Aku bener-bener sayang sama kamu, Chilla. Mungkin kita belum lama kenal, tapi perasaan ini udah kayak lava yang mau meledak-ledak. Aku pengen jadi orang yang bisa bikin kamu tersenyum setiap hari.</p>
+            </div>
+            
+            <div class="message">
+                <h3><i class="fas fa-heart"></i> Last but not least...</h3>
+                <p>Thanks ya udah jadi diri kamu yang sekarang. Jangan pernah berubah, dan semoga suatu hari nanti, kita bisa jalan bareng lebih sering. Aku tunggu responnyaaa! 😊</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Made with <i class="fas fa-heart"></i> just for you</p>
+            <p>Hope this makes you smile!</p>
+            <div class="signature">From your secret admirer</div>
+        </div>
+    </div>
+
+    <script>
+        // Create floating hearts in the header
+        const heartsContainer = document.getElementById('hearts');
+        for (let i = 0; i < 15; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.top = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 5 + 's';
+            heart.style.fontSize = (Math.random() * 15 + 15) + 'px';
+            heartsContainer.appendChild(heart);
+        }
+        
+        // Create floating hearts in the background
+        const floatingHearts = document.getElementById('floatingHearts');
+        for (let i = 0; i < 30; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDelay = Math.random() * 8 + 's';
+            heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            floatingHearts.appendChild(heart);
+        }
+        
+        // Add click effect
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.innerHTML = '❤️';
+            heart.style.left = e.pageX + 'px';
+            heart.style.top = e.pageY + 'px';
+            heart.style.animationDelay = '0s';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        });
+    </script>
+</body>
+</html>
